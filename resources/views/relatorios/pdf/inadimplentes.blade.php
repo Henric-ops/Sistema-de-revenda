@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Clientes Inadimplentes — Cosmetiq</title>
+    <title>Clientes Inadimplentes — Lu Vendas</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -366,7 +366,7 @@
         <!-- HEADER -->
         <div class="header">
             <div class="brand-block">
-                <div class="brand-name">Cosmetiq</div>
+                <div class="brand-name">Lu Vendas</div>
                 <div class="brand-tagline">Sistema de Gestão para Revendedoras</div>
             </div>
             <div class="meta-block">
@@ -454,7 +454,7 @@
         <div class="divider"></div>
 
         <div class="footer">
-            <div class="footer-brand">Cosmetiq</div>
+            <div class="footer-brand">Lu Vendas</div>
             <div class="footer-note">Relatório gerado automaticamente · Documento confidencial</div>
         </div>
     </div>

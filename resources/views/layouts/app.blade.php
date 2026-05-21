@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cosmetiq</title>
+    <title>Lu Vendas</title>
 
     {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                 <div class="logo">
                     <h2>
                         <i class="bi bi-flower1"></i>
-                        Cosmetiq
+                        Lu Vendas
                     </h2>
                 </div>
 
@@ -93,7 +93,7 @@
 
                 <div>
                     {{-- MUDANÇA 3: eyebrow acima do título --}}
-                    <p class="topbar-title-eyebrow">Cosmetiq</p>
+                    <p class="topbar-title-eyebrow">Lu Vendas</p>
                     <h1>@yield('title')</h1>
                 </div>
 

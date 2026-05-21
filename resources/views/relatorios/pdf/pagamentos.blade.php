@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Pagamentos — Cosmetiq</title>
+    <title>Relatório de Pagamentos — Lu Vendas</title>
 
     <style>
         :root {
@@ -334,7 +334,7 @@
         {{-- HEADER --}}
         <div class="header">
             <div>
-                <div class="brand-name">Cosmetiq</div>
+                <div class="brand-name">Lu Vendas</div>
                 <div class="brand-tagline">Sistema de Gestão para Revendedoras</div>
             </div>
             <div class="meta-block">
@@ -412,7 +412,7 @@
         {{-- FOOTER --}}
         <div class="divider"></div>
         <div class="footer">
-            <div class="footer-brand">Cosmetiq</div>
+            <div class="footer-brand">Lu Vendas</div>
             <div class="footer-note">Relatório gerado automaticamente · Documento confidencial</div>
         </div>
 

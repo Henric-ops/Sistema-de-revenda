@@ -9,7 +9,7 @@ use App\Models\User;
 class Cliente extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         'user_id',
         'nome',

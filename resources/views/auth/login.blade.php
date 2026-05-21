@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmetiq | Login</title>
+    <title>Lu Vendas | Login</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
@@ -35,7 +35,7 @@
                 <i class="bi bi-flower2"></i>
             </div>
 
-            <h1>Cosmetiq</h1>
+            <h1>Lu Vendas</h1>
 
             <p>Entre para acessar o sistema</p>
 

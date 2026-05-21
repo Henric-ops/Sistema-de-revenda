@@ -466,83 +466,86 @@
 
                 <tbody>
                     @foreach($clientes as $cliente)
-                        <tr data-busca="{{ strtolower($cliente->nome . ' ' . $cliente->celular) }}">
+                                <tr data-busca="{{ strtolower($cliente->nome . ' ' . $cliente->celular) }}">
 
-                            <td>
-                                <div class="cliente-cell">
-                                    <div class="cliente-avatar">
-                                        {{ strtoupper(substr($cliente->nome, 0, 1)) }}
-                                    </div>
-                                    <span class="cliente-nome">{{ $cliente->nome }}</span>
-                                </div>
-                            </td>
+                                    <td>
+                                        <div class="cliente-cell">
+                                            <div class="cliente-avatar">
+                                                {{ strtoupper(substr($cliente->nome, 0, 1)) }}
+                                            </div>
+                                            <span class="cliente-nome">{{ $cliente->nome }}</span>
+                                        </div>
+                                    </td>
 
-                            <td>
-                                <div class="celular-cell">
-                                    <i class="bi bi-telephone"></i>
-                                    {{ $cliente->celular }}
-                                </div>
-                            </td>
+                                    <td>
+                                        <div class="celular-cell">
+                                            <i class="bi bi-telephone"></i>
+                                            {{ $cliente->celular }}
+                                        </div>
+                                    </td>
 
-                            <td>
-                                @if($cliente->ativo)
-                                    <span class="badge-pill ativo">Ativo</span>
-                                @else
-                                    <span class="badge-pill inativo">Inativo</span>
-                                @endif
-                            </td>
+                                    <td>
+                                        @if($cliente->ativo)
+                                            <span class="badge-pill ativo">Ativo</span>
+                                        @else
+                                            <span class="badge-pill inativo">Inativo</span>
+                                        @endif
+                                    </td>
 
-                            <td>
-                                <div class="acoes-cell">
+                                    <td>
+                                        <div class="acoes-cell">
 
 
-                                    {{-- WhatsApp cobrança --}}
-                                    <button type="button" class="btn-ic whatsapp" title="Cobrar via WhatsApp" onclick="cobrarWhatsApp(
-                                                                            '{{ $cliente->celular }}',
-                                                                            '{{ $cliente->nome }}',
-                                                                            '{{ number_format($cliente->compras->sum('saldo_restante'), 2, ',', '.') }}',
-                                                                            '{{ $cliente->compras->pluck('descricao_produtos')->implode(', ') }}'
-                                                                        )">
+                                            {{-- WhatsApp cobrança --}}
+                                            <button type="button" class="btn-ic whatsapp" title="Cobrar via WhatsApp"
+                                                data-telefone="{{ e($cliente->celular) }}" data-nome="{{ e($cliente->nome) }}"
+                                                data-valor="{{ number_format($cliente->compras->sum('saldo_restante'), 2, ',', '.') }}"
+                                                data-produtos="{{ e($cliente->compras->pluck('descricao_produtos')->implode(', ')) }}"
+                                                onclick="cobrarWhatsApp(
+                            this.dataset.telefone,
+                            this.dataset.nome,
+                            this.dataset.valor,
+                            this.dataset.produtos
+                        )">
+                                                <i class="bi bi-whatsapp"></i>
+                                            </button>
 
-                                        <i class="bi bi-whatsapp"></i>
-                                    </button>
+                                            {{-- Visualizar --}}
+                                            <a href="{{ route('clientes.show', $cliente->id) }}" class="btn-ic view" title="Visualizar">
 
-                                    {{-- Visualizar --}}
-                                    <a href="{{ route('clientes.show', $cliente->id) }}" class="btn-ic view" title="Visualizar">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
 
-                                        <i class="bi bi-eye"></i>
-                                    </a>
+                                            {{-- Editar --}}
+                                            <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn-ic edit" title="Editar">
 
-                                    {{-- Editar --}}
-                                    <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn-ic edit" title="Editar">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
 
-                                        <i class="bi bi-pencil"></i>
-                                    </a>
+                                            {{-- Reenviar acesso --}}
+                                            <a href="{{ route('clientes.reenviar-acesso', $cliente->id) }}" class="btn-ic user"
+                                                title="Reenviar acesso via WhatsApp">
 
-                                    {{-- Reenviar acesso --}}
-                                    <a href="{{ route('clientes.reenviar-acesso', $cliente->id) }}" class="btn-ic user"
-                                        title="Reenviar acesso via WhatsApp">
+                                                <i class="bi bi-send"></i>
+                                            </a>
 
-                                        <i class="bi bi-send"></i>
-                                    </a>
+                                            {{-- Excluir --}}
+                                            <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"
+                                                onsubmit="return confirm('Deseja excluir este cliente?')">
 
-                                    {{-- Excluir --}}
-                                    <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST"
-                                        onsubmit="return confirm('Deseja excluir este cliente?')">
+                                                @csrf
+                                                @method('DELETE')
 
-                                        @csrf
-                                        @method('DELETE')
+                                                <button type="submit" class="btn-ic delete" title="Excluir">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
 
-                                        <button type="submit" class="btn-ic delete" title="Excluir">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
+                                            </form>
 
-                                    </form>
+                                        </div>
+                                    </td>
 
-                                </div>
-                            </td>
-
-                        </tr>
+                                </tr>
                     @endforeach
                 </tbody>
             </table>

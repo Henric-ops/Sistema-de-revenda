@@ -839,7 +839,7 @@ body {
     margin-bottom: 30px;
 }
 
-.login-body-cosmetiq {
+.login-body-LuVendas {
     margin: 0;
     font-family: 'Outfit', sans-serif;
     background: linear-gradient(135deg, #faf4ee, #fde8d8);
@@ -935,7 +935,7 @@ body {
     box-shadow: 0 0 0 4px rgba(156, 74, 48, 0.12);
 }
 
-.btn-login-cosmetiq {
+.btn-login-LuVendas {
     width: 100%;
     margin-top: 10px;
     padding: 13px;
@@ -950,7 +950,7 @@ body {
     cursor: pointer;
 }
 
-.btn-login-cosmetiq:hover {
+.btn-login-LuVendas:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 16px rgba(156, 74, 48, 0.2);
 }
